@@ -1,0 +1,33 @@
+﻿@model List<StudentPortal.Web.Models.Entities.Students>
+
+<h1>Student List</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sr:</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Subscribed</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id.ToString().Substring(0, 8)</td>
+                    <td>@student.Name</td>
+                    <td>@student.Phone</td>
+                    <td>@student.Email</td>
+                    <td>@(student.Subscribed ? "Yes" : "No")</td>
+                    <td>
+                        <a>Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
