@@ -4,7 +4,8 @@
 
 @if (Model != null)
 {
-    <form asp-controller="Students" asp-action="Edit" method="post" class="mt-3" id="editStudentForm"> <!-- Renamed form id to "editStudentForm" -->
+    <form asp-controller="Students" asp-action="Edit" method="post" class="mt-3" id="editStudentForm">
+        <!-- Renamed form id to "editStudentForm" -->
         <div class="form-group">
             <label class="form-label">Id</label>
             <input type="text" class="form-control" asp-for="Id" readonly />
@@ -36,9 +37,16 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+
+        <button type="submit" class="btn btn-danger mt-3 ms-3"
+                asp-action="Delete"
+                asp-controller="Students">
+            Delete Record
+        </button>
     </form>
 }
-else {
+else
+{
     <p>No Student found with this ID</p>
 }
 
