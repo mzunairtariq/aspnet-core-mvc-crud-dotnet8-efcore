@@ -24,7 +24,7 @@
                     <td>@student.Email</td>
                     <td>@(student.Subscribed ? "Yes" : "No")</td>
                     <td>
-                        <a>Edit</a>
+                        <a class="btn btn-outline-primary" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
                     </td>
                 </tr>
             }
